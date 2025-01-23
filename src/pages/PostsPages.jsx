@@ -1,6 +1,8 @@
 const PostsPages = () => {
   return (
-    <h1>Posts Page</h1>
+    <>
+      <h1>Posts Page</h1>
+    </>
   )
 }
 

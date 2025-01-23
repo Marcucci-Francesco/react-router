@@ -1,9 +1,21 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePages from './pages/HomePages';
+import AboutPages from './pages/AboutPages';
+import PostsPages from './pages/PostsPages';
+import DefaultLayout from './layouts/DefaultLayout';
 
 const App = () => {
   return (
-    <div>App</div>
+    <BrowserRouter>
+      <Routes>
+        <Route Component={DefaultLayout}>
+          <Route path='/' Component={HomePages} />
+          <Route path='/chi siamo' Component={AboutPages} />
+          <Route path='/posts' Component={PostsPages} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
