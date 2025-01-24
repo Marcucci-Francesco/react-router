@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
 const PostsPages = () => {
 
   const apiUrl = 'http://localhost:3000';
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState(null)
 
 
   const fetchPosts = () => {
@@ -26,10 +27,13 @@ const PostsPages = () => {
   return (
     <>
       <div className="container">
-        <h1 className="text-center my-5">Posts Page</h1>
+        <h1 className="text-center my-5">Post</h1>
         <ul className="list-group">
-          {posts.map(post => (
-            <li key={post.id} className="list-group-item d-flex justify-content-between align-items-center">{post.title}<button className="btn btn-primary">Vedi dettagli</button></li>
+          {posts?.map(post => (
+            <li key={post.id} className="list-group-item d-flex justify-content-between align-items-center">
+              {post.title}
+              <Link className="btn btn-primary" to={`/dettagli-post/${post.id}`}>Vedi dettagli</Link>
+            </li>
           ))}
         </ul>
       </div>
