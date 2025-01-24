@@ -36,6 +36,9 @@ const PostsPages = () => {
             </li>
           ))}
         </ul>
+        <div className='d-flex justify-content-center my-5'>
+          <Link className="btn btn-success" to={'/nuovo-post'}>Crea Post</Link>
+        </div>
       </div>
     </>
   )
